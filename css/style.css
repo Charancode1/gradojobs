@@ -350,18 +350,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .brand-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
   flex-shrink: 0;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.brand-wrapper:hover {
+  transform: translateY(-1px);
 }
 
 .brand-logo-img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  border-radius: var(--radius-sm);
-  background: #ffffff;
+  width: 145px;
+  height: 145px;
+  max-width: none;
+  flex-shrink: 0;
+  margin-top: 11px;
+  margin-left: -1px;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .desktop-nav {
