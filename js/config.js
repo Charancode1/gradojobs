@@ -6,8 +6,8 @@
  * route to this link.
  */
 export const CONFIG = {
-  // Central WhatsApp Channel URL (Update this placeholder with your actual WhatsApp link)
-  WHATSAPP_CHANNEL_URL: "YOUR_WHATSAPP_CHANNEL_URL",
+  // Official GradoJobs WhatsApp Channel URL
+  WHATSAPP_CHANNEL_URL: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
 
   // Contact & Brand Details
   BRAND_NAME: "GradoJobs",

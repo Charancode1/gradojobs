@@ -37,8 +37,8 @@ The WhatsApp Channel link is managed centrally in one file:
 
 ```javascript
 export const CONFIG = {
-  // Replace this placeholder with your actual WhatsApp Channel link
-  WHATSAPP_CHANNEL_URL: "https://whatsapp.com/channel/your-channel-id",
+  // Official WhatsApp Channel link
+  WHATSAPP_CHANNEL_URL: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
   ...
 };
 ```
