@@ -1,4 +1,4 @@
-# GradoJobs — Official Static Website
+# GradoJobs 
 
 A clean, modern, and professional static website for **GradoJobs**, a WhatsApp-based job-sharing channel focused on freshers, final-year students, and early-career graduates in India.
 
