@@ -12,7 +12,8 @@ export const CONFIG = {
   // Contact & Brand Details
   BRAND_NAME: "GradoJobs",
   TAGLINE: "Your Next Opportunity Starts Here",
-  CONTACT_EMAIL: "gradojobs.official@gmail.com",
+  // Official LinkedIn Company Page
+  LINKEDIN_URL: "https://www.linkedin.com/company/gradojobs",
 };
 
 // Also expose globally for non-module inline scripts if needed
