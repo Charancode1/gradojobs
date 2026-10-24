@@ -1,7 +1,7 @@
 import { CONFIG } from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initWhatsAppCtas();
+  initCommunityLinks();
   initMobileNavigation();
   initStickyHeader();
   initScrollSpy();
@@ -10,31 +10,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Configure all WhatsApp Call-To-Action buttons across the site
- * using the central CONFIG.WHATSAPP_CHANNEL_URL.
+ * Configure all community and social platform links across the site
+ * using the central CONFIG settings.
  */
-function initWhatsAppCtas() {
-  const ctaButtons = document.querySelectorAll('.whatsapp-cta, [data-whatsapp-cta]');
-  const channelUrl = CONFIG.WHATSAPP_CHANNEL_URL || 'YOUR_WHATSAPP_CHANNEL_URL';
+function initCommunityLinks() {
+  const whatsappUrl = CONFIG.SOCIAL_LINKS?.whatsapp || CONFIG.WHATSAPP_CHANNEL_URL;
+  const linkedinUrl = CONFIG.SOCIAL_LINKS?.linkedin || CONFIG.LINKEDIN_URL;
 
-  ctaButtons.forEach((btn) => {
-    // If it's an anchor tag, assign href
-    if (btn.tagName.toLowerCase() === 'a') {
-      btn.setAttribute('href', channelUrl);
+  // WhatsApp CTAs
+  const whatsappButtons = document.querySelectorAll('.whatsapp-cta, [data-whatsapp-cta], [data-social="whatsapp"]');
+  whatsappButtons.forEach((btn) => {
+    if (btn.tagName.toLowerCase() === 'a' && whatsappUrl) {
+      btn.setAttribute('href', whatsappUrl);
       btn.setAttribute('target', '_blank');
       btn.setAttribute('rel', 'noopener noreferrer');
     }
+  });
 
-    btn.addEventListener('click', (e) => {
-      // Check if URL is still the placeholder
-      if (channelUrl === 'YOUR_WHATSAPP_CHANNEL_URL' || !channelUrl.startsWith('http')) {
-        e.preventDefault();
-        showToast(
-          'WhatsApp channel URL is currently set to placeholder ("YOUR_WHATSAPP_CHANNEL_URL"). Please configure it in js/config.js.',
-          'info'
-        );
-      }
-    });
+  // LinkedIn CTAs
+  const linkedinButtons = document.querySelectorAll('.linkedin-cta, [data-social="linkedin"]');
+  linkedinButtons.forEach((btn) => {
+    if (btn.tagName.toLowerCase() === 'a' && linkedinUrl) {
+      btn.setAttribute('href', linkedinUrl);
+      btn.setAttribute('target', '_blank');
+      btn.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+
+  // Automatically hide any optional social links that do not have an active URL configured
+  const optionalSocials = document.querySelectorAll('[data-social-platform]');
+  optionalSocials.forEach((el) => {
+    const platform = el.getAttribute('data-social-platform');
+    const url = CONFIG.SOCIAL_LINKS?.[platform];
+    if (!url || url.trim() === '') {
+      el.style.display = 'none';
+    }
   });
 }
 

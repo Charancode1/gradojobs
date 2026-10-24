@@ -1,6 +1,9 @@
-# GradoJobs 
+# GradoJobs
 
-A clean, modern, and professional static website for **GradoJobs**, a WhatsApp-based job-sharing channel focused on freshers, final-year students, and early-career graduates in India.
+> **“Your Career. Your Next Move.”**  
+> Opportunities, internships, and career resources to help freshers and early-career graduates take their next step with confidence.
+
+A clean, modern, and professional website for **GradoJobs**, a dedicated career-opportunities platform for freshers, final-year college students, and early-career professionals across India.
 
 ---
 
@@ -29,27 +32,37 @@ python -m http.server 8000
 
 ---
 
-## 📱 Updating the WhatsApp Channel URL
+## 🌐 Managing Distribution & Community Channels
 
-The WhatsApp Channel link is managed centrally in one file:
+All platform links and brand settings are managed centrally in:
 
 👉 **[`js/config.js`](./js/config.js)**
 
 ```javascript
 export const CONFIG = {
-  // Official WhatsApp Channel link
-  WHATSAPP_CHANNEL_URL: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
-  ...
+  BRAND_NAME: "GradoJobs",
+  MOTTO: "Your Career. Your Next Move.",
+  TAGLINE: "Your Career. Your Next Move.",
+  SUPPORTING_MESSAGE:
+    "Opportunities, internships, and career resources to help freshers and early-career graduates take their next step with confidence.",
+
+  // Official Distribution & Community Channels
+  SOCIAL_LINKS: {
+    whatsapp: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
+    linkedin: "https://www.linkedin.com/company/gradojobs",
+    instagram: "", // Leave empty until official handle is launched
+    x: "",         // Leave empty until official handle is launched
+  },
 };
 ```
 
-All "Join WhatsApp Channel" buttons and CTAs across the entire website will automatically route to the updated URL in a new tab.
+All CTA buttons, channel badges, and community links across the website automatically bind to this central configuration. If an optional platform URL is empty, it is automatically hidden to avoid dead or broken links.
 
 ---
 
 ## 🎨 Brand Identity & Assets
 
-- **Website Brand Logo:** `full logo.jpg` — Used natively across the header, hero showcase, about section, and footer.
+- **Website Brand Logos:** `only logo.jpg` (clean, icon-only top-left navbar) and `full logo.jpg` (hero showcase card, about section, and footer).
 - **Brand Typography:** Text logo styled with the exact gradient (`gradojobs`: navy, blue, orange, and purple gradient).
 - **Browser Favicon:** `only logo.jpg` & cropped multi-resolution web assets (`favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png`).
 - **Color Palette:**
