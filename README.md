@@ -92,3 +92,5 @@ This site can be deployed instantly to any free static hosting provider:
 
 ## 📄 License
 &copy; 2026 GradoJobs. All rights reserved.
+
+#gradohire refinement from gradojobs
