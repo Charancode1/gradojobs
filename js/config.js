@@ -1,24 +1,23 @@
 /**
- * GradoJobs - Central Platform & Community Configuration
+ * GradoHire - Central Platform Configuration
  *
- * Manage official platform links and brand settings from one central place.
- * Add URLs for active channels; leave empty ("") for platforms not yet launched.
+ * Manage official platform links, branding, and metadata from one central place.
  */
 export const CONFIG = {
   // Brand Details
-  BRAND_NAME: "GradoJobs",
-  MOTTO: "Your Career. Your Next Move.",
-  TAGLINE: "Your Career. Your Next Move.",
+  BRAND_NAME: "GradoHire",
+  HEADLINE: "A Fresher's Job Portal. Without the 2-Year Experience Paradox.",
   SUPPORTING_MESSAGE:
-    "Opportunities, internships, and career resources to help freshers and early-career graduates take their next step with confidence.",
+    "Why should a job require 2 years of experience in a technology that has existed for just 1 year? GradoHire connects freshers with opportunities that value potential, skills, and ambition.",
+  TAGLINE: "A job portal built for freshers.",
 
   // Official Distribution & Community Channels
   // Add URLs for active platforms; leave empty ("") for platforms not yet launched.
   SOCIAL_LINKS: {
     whatsapp: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
     linkedin: "https://www.linkedin.com/company/gradojobs",
-    instagram: "", // Leave empty until official handle is launched
-    x: "",         // Leave empty until official handle is launched
+    instagram: "",
+    x: "",
   },
 
   // Backwards-compatible direct references
@@ -26,7 +25,7 @@ export const CONFIG = {
   LINKEDIN_URL: "https://www.linkedin.com/company/gradojobs",
 };
 
-// Also expose globally for inline script access if needed
+// Expose globally for browser console or inline script access if needed
 if (typeof window !== "undefined") {
-  window.GRADOJOBS_CONFIG = CONFIG;
+  window.GRADOHIRE_CONFIG = CONFIG;
 }

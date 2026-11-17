@@ -1,9 +1,9 @@
-# GradoJobs
+# GradoHire
 
-> **“Your Career. Your Next Move.”**  
-> Opportunities, internships, and career resources to help freshers and early-career graduates take their next step with confidence.
+> **A Fresher's Job Portal. Without the 2-Year Experience Paradox.**  
+> *"Why should a job require 2 years of experience in a technology that has existed for just 1 year? GradoHire connects freshers with opportunities that value potential, skills, and ambition."*
 
-A clean, modern, and professional website for **GradoJobs**, a dedicated career-opportunities platform for freshers, final-year college students, and early-career professionals across India.
+GradoHire is a modern, lightweight, and professional static job portal designed specifically for fresh university graduates, entry-level candidates, and early-career professionals.
 
 ---
 
@@ -21,7 +21,7 @@ npm run dev
 The website will be live at `http://localhost:3000` (or the port indicated in your terminal).
 
 ### 2. Static / Zero-Dependency Serving
-Because this is a pure static frontend (HTML5, Vanilla CSS3, ES Modules), you can also serve it with any static server or open it directly:
+Because this is a pure static frontend (HTML5, Vanilla CSS3, ES Modules), you can serve it with any static web server:
 ```bash
 # Using npx serve
 npx serve .
@@ -32,65 +32,93 @@ python -m http.server 8000
 
 ---
 
-## 🌐 Managing Distribution & Community Channels
+## 🎨 Brand Identity & Design System
 
-All platform links and brand settings are managed centrally in:
+- **Brand Name:** GradoHire
+- **Tagline:** A Fresher's Job Portal. Without the 2-Year Experience Paradox.
+- **Positioning:** A job portal built for freshers.
+- **Primary Logo:** `gradohire-logo.png` & `Gradohire G logo.png` — modern forward-leaning "G" emblem mark in royal cornflower/periwinkle blue (`#4f75e2` / `#5b7ce2` / `#6383e8`).
+- **Typography:**
+  - Headings: `Outfit` (Modern, geometric, bold)
+  - Body & UI: `Plus Jakarta Sans` (Clean, highly legible)
+- **Color Palette:**
+  - Primary Blue: `#4f75e2`
+  - Periwinkle Blue: `#5b7ce2` / `#6383e8`
+  - Deep Navy Typography: `#0a1128`
+  - Background Neutral: `#ffffff`
+  - Surface Neutral: `#f8fafc`
+  - Border Accents: `#e2e8f0`
+
+---
+
+## 🌐 Central Configuration
+
+Manage company channels and brand settings centrally in:
 
 👉 **[`js/config.js`](./js/config.js)**
 
 ```javascript
 export const CONFIG = {
-  BRAND_NAME: "GradoJobs",
-  MOTTO: "Your Career. Your Next Move.",
-  TAGLINE: "Your Career. Your Next Move.",
+  BRAND_NAME: "GradoHire",
+  HEADLINE: "A Fresher's Job Portal. Without the 2-Year Experience Paradox.",
   SUPPORTING_MESSAGE:
-    "Opportunities, internships, and career resources to help freshers and early-career graduates take their next step with confidence.",
+    "Why should a job require 2 years of experience in a technology that has existed for just 1 year? GradoHire connects freshers with opportunities that value potential, skills, and ambition.",
+  TAGLINE: "A job portal built for freshers.",
 
-  // Official Distribution & Community Channels
   SOCIAL_LINKS: {
     whatsapp: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
     linkedin: "https://www.linkedin.com/company/gradojobs",
-    instagram: "", // Leave empty until official handle is launched
-    x: "",         // Leave empty until official handle is launched
+    instagram: "",
+    x: "",
   },
 };
 ```
 
-All CTA buttons, channel badges, and community links across the website automatically bind to this central configuration. If an optional platform URL is empty, it is automatically hidden to avoid dead or broken links.
+All CTA buttons and community badges automatically sync to this configuration. Optional platforms with empty strings (`""`) remain gracefully hidden.
 
 ---
 
-## 🎨 Brand Identity & Assets
+## 📁 Project Structure
 
-- **Website Brand Logos:** `only logo.jpg` (clean, icon-only top-left navbar) and `full logo.jpg` (hero showcase card, about section, and footer).
-- **Brand Typography:** Text logo styled with the exact gradient (`gradojobs`: navy, blue, orange, and purple gradient).
-- **Browser Favicon:** `only logo.jpg` & cropped multi-resolution web assets (`favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png`).
-- **Color Palette:**
-  - Navy: `#0a1128`
-  - Azure Blue: `#0088ff`
-  - Indigo/Purple: `#5b46e8` / `#9333ea`
-  - Vibrant Coral/Orange: `#ff5b14`
-  - WhatsApp Accent: `#25d366`
+```
+gradohire/
+├── Gradohire G logo.png        # Original 4000x4000 brand logo asset
+├── gradohire-logo.png          # High-resolution transparent logo mark
+├── favicon.ico                 # Multi-resolution favicon
+├── favicon-16x16.png           # 16x16 browser favicon
+├── favicon-32x32.png           # 32x32 browser favicon
+├── apple-touch-icon.png        # Apple touch icon
+├── android-chrome-192x192.png  # PWA / Android 192 icon
+├── android-chrome-512x512.png  # PWA / Android 512 icon
+├── site.webmanifest            # Web app manifest
+├── index.html                  # Main semantic HTML5 webpage
+├── css/
+│   └── style.css               # GradoHire design system & responsive styling
+├── js/
+│   ├── app.js                  # Navigation, sticky header, mobile drawer, scrollspy
+│   └── config.js               # Central brand & channel configuration
+└── package.json                # Project scripts & dependencies
+```
 
 ---
 
-## 🌐 Free Static Deployment
+## ⚡ Production Build
 
-This site can be deployed instantly to any free static hosting provider:
+To produce an optimized production bundle:
 
-### GitHub Pages
-1. Go to repository **Settings** &rarr; **Pages**.
-2. Under **Build and deployment**, select source: **Deploy from a branch**.
-3. Branch: `main`, folder: `/ (root)`.
-4. Click **Save**.
+```bash
+npm run build
+```
 
-### Cloudflare Pages / Vercel / Netlify
-- **Build command:** `npm run build` (or leave empty for direct static deploy)
-- **Output directory:** `dist` (if using Vite build) or `.` (root directory)
+Assets will be output to the `dist/` directory, ready to deploy to GitHub Pages, Cloudflare Pages, Vercel, or Netlify.
 
 ---
 
 ## 📄 License
+ HEAD
 &copy; 2026 GradoJobs. All rights reserved.
 
 #gradohire refinement from gradojobs
+
+&copy; 2026 GradoHire. All rights reserved.
+f6e3355 (repositioning into gradohire)

@@ -55,7 +55,7 @@ function initMobileNavigation() {
   const toggleBtn = document.getElementById('mobile-menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const overlay = document.getElementById('mobile-menu-overlay');
-  const navLinks = document.querySelectorAll('.mobile-nav-link, #mobile-menu .whatsapp-cta');
+  const navLinks = document.querySelectorAll('.mobile-nav-link, #mobile-menu .btn');
 
   if (!toggleBtn || !mobileMenu) return;
 
@@ -147,7 +147,7 @@ function initScrollSpy() {
       });
     },
     {
-      rootMargin: '-20% 0px -70% 0px',
+      rootMargin: '-20% 0px -60% 0px',
     }
   );
 
@@ -195,53 +195,4 @@ function initFaqAccordion() {
       }
     });
   });
-}
-
-/**
- * Toast Notification Utility
- */
-function showToast(message, type = 'info') {
-  let toastContainer = document.getElementById('toast-container');
-  if (!toastContainer) {
-    toastContainer = document.createElement('div');
-    toastContainer.id = 'toast-container';
-    toastContainer.className = 'toast-container';
-    document.body.appendChild(toastContainer);
-  }
-
-  const toast = document.createElement('div');
-  toast.className = `toast-message toast-${type}`;
-  toast.innerHTML = `
-    <div class="toast-content">
-      <svg class="toast-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="12" y1="16" x2="12" y2="12"></line>
-        <line x1="12" y1="8" x2="12.01" y2="8"></line>
-      </svg>
-      <span>${escapeHtml(message)}</span>
-    </div>
-    <button type="button" class="toast-close" aria-label="Close notification">&times;</button>
-  `;
-
-  toastContainer.appendChild(toast);
-
-  // Trigger animation
-  requestAnimationFrame(() => {
-    toast.classList.add('is-visible');
-  });
-
-  const closeBtn = toast.querySelector('.toast-close');
-  const dismiss = () => {
-    toast.classList.remove('is-visible');
-    setTimeout(() => toast.remove(), 300);
-  };
-
-  closeBtn.addEventListener('click', dismiss);
-  setTimeout(dismiss, 5000);
-}
-
-function escapeHtml(str) {
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
 }

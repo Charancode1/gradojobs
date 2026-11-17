@@ -1,5 +1,5 @@
 {
-  "name": "gradojobs",
+  "name": "gradohire",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -8,18 +8,16 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Charancode1/gradojobs.git"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "job-portal",
+    "freshers",
+    "entry-level",
+    "career",
+    "recruitment"
+  ],
+  "author": "GradoHire",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Charancode1/gradojobs/issues"
-  },
-  "homepage": "https://github.com/Charancode1/gradojobs#readme",
-  "description": "",
+  "description": "GradoHire - A Fresher's Job Portal. Without the 2-Year Experience Paradox.",
   "devDependencies": {
     "vite": "^8.3.5"
   }

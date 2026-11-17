@@ -1,7 +1,7 @@
 {
-  "name": "GradoJobs",
-  "short_name": "GradoJobs",
-  "description": "Career opportunities, internships, and resources to help freshers and early-career graduates take their next step with confidence.",
+  "name": "GradoHire",
+  "short_name": "GradoHire",
+  "description": "A fresher's job portal. Without the 2-year experience paradox. Connecting fresh graduates and entry-level talent with real career opportunities.",
   "icons": [
     {
       "src": "/favicon-16x16.png",
@@ -24,7 +24,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0a1128",
+  "theme_color": "#4f75e2",
   "background_color": "#ffffff",
   "display": "standalone"
 }
