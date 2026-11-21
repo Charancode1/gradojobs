@@ -67,7 +67,7 @@ export const CONFIG = {
 
   SOCIAL_LINKS: {
     whatsapp: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
-    linkedin: "https://www.linkedin.com/company/gradojobs",
+    linkedin: "https://www.linkedin.com/company/gradohire",
     instagram: "",
     x: "",
   },
@@ -117,7 +117,7 @@ Assets will be output to the `dist/` directory, ready to deploy to GitHub Pages,
 
 ## 📄 License
  HEAD
-&copy; 2026 GradoJobs. All rights reserved.
+&copy; 2026 GradoHire. All rights reserved.
 
 #gradohire refinement from gradojobs
 

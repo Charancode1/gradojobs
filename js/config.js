@@ -15,14 +15,14 @@ export const CONFIG = {
   // Add URLs for active platforms; leave empty ("") for platforms not yet launched.
   SOCIAL_LINKS: {
     whatsapp: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
-    linkedin: "https://www.linkedin.com/company/gradojobs",
+    linkedin: "https://www.linkedin.com/company/gradohire",
     instagram: "",
     x: "",
   },
 
   // Backwards-compatible direct references
   WHATSAPP_CHANNEL_URL: "https://whatsapp.com/channel/0029VbE8fquCBtxAqXgIpf38",
-  LINKEDIN_URL: "https://www.linkedin.com/company/gradojobs",
+  LINKEDIN_URL: "https://www.linkedin.com/company/gradohire",
 };
 
 // Expose globally for browser console or inline script access if needed
