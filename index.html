@@ -145,41 +145,321 @@
           </div>
         </div>
 
-        <!-- Right Hero Visual Showcase Card -->
-        <div class="hero-visual-card">
-          <!-- Floating badge pills -->
-          <div class="hero-floating-pill pill-top-left">
-            <span class="pill-icon pill-icon-blue">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-            </span>
-            <span>0&ndash;1 Years Experience</span>
+        <!-- Right Hero Visual Composition: Breaking the Experience Barrier (3D Career Staircase) -->
+        <div class="hero-barrier-stage" aria-label="Breaking the Experience Barrier: The Fresh Graduate Career Journey">
+          
+          <!-- Background Ambient Glow -->
+          <div class="hero-barrier-glow" aria-hidden="true"></div>
+
+          <!-- 3D Architectural Isometric SVG Illustration -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" class="hero-barrier-svg" fill="none" aria-hidden="true">
+            <defs>
+              <!-- Ambient Studio Glow -->
+              <radialGradient id="stage-ambient-glow" cx="70%" cy="28%" r="65%">
+                <stop offset="0%" stop-color="#6483e8" stop-opacity="0.22" />
+                <stop offset="45%" stop-color="#4f75e2" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+              </radialGradient>
+
+              <!-- Volumetric Light Beam from Doorway -->
+              <linearGradient id="door-volumetric-beam" x1="85%" y1="18%" x2="25%" y2="72%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65" />
+                <stop offset="20%" stop-color="#fef08a" stop-opacity="0.35" />
+                <stop offset="50%" stop-color="#93c5fd" stop-opacity="0.20" />
+                <stop offset="80%" stop-color="#6483e8" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="#6483e8" stop-opacity="0" />
+              </linearGradient>
+
+              <!-- Doorway Portal Interior Light -->
+              <radialGradient id="portal-inner-glow" cx="45%" cy="45%" r="60%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="35%" stop-color="#fef08a" stop-opacity="0.95" />
+                <stop offset="70%" stop-color="#818cf8" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#3b5ec4" />
+              </radialGradient>
+
+              <!-- Step Top Face Gradients -->
+              <linearGradient id="step-top-base" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="#f0f5ff" />
+              </linearGradient>
+
+              <linearGradient id="step-top-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="#e6effe" />
+              </linearGradient>
+
+              <linearGradient id="step-top-upper" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="50%" stop-color="#fef9c3" stop-opacity="0.8" />
+                <stop offset="100%" stop-color="#dbeafe" />
+              </linearGradient>
+
+              <!-- Step Vertical Faces Gradients -->
+              <linearGradient id="step-fl-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#e0eafc" />
+                <stop offset="100%" stop-color="#c5d8f8" />
+              </linearGradient>
+
+              <linearGradient id="step-fr-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#b6cdf8" />
+                <stop offset="100%" stop-color="#9cbcf4" />
+              </linearGradient>
+
+              <!-- Glass Experience Barrier Fill -->
+              <linearGradient id="glass-pane-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45" />
+                <stop offset="30%" stop-color="#93c5fd" stop-opacity="0.25" />
+                <stop offset="70%" stop-color="#6483e8" stop-opacity="0.18" />
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.32" />
+              </linearGradient>
+
+              <!-- Glass Shard Fill -->
+              <linearGradient id="glass-shard-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75" />
+                <stop offset="60%" stop-color="#93c5fd" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#6483e8" stop-opacity="0.3" />
+              </linearGradient>
+
+              <!-- Cap Top Gradient -->
+              <linearGradient id="cap-top-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#141f3d" />
+                <stop offset="50%" stop-color="#0a1128" />
+                <stop offset="100%" stop-color="#050814" />
+              </linearGradient>
+
+              <!-- Soft Shadows and Glows -->
+              <filter id="shadow-slab" x="-20%" y="-20%" width="150%" height="150%">
+                <feDropShadow dx="0" dy="14" stdDeviation="10" flood-color="#0a1128" flood-opacity="0.08" />
+              </filter>
+
+              <filter id="shadow-cap" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0a1128" flood-opacity="0.15" />
+              </filter>
+
+              <filter id="glow-door" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="12" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- Ambient Light Background -->
+            <rect x="0" y="0" width="600" height="680" fill="url(#stage-ambient-glow)" />
+
+            <!-- Architectural Floor Grid Lines (Perspective Fading) -->
+            <g class="stage-grid-lines" stroke="rgba(100, 131, 232, 0.12)" stroke-width="1">
+              <line x1="60" y1="620" x2="300" y2="480" />
+              <line x1="120" y1="650" x2="360" y2="510" />
+              <line x1="200" y1="670" x2="440" y2="530" />
+              <line x1="60" y1="560" x2="360" y2="670" />
+              <line x1="140" y1="510" x2="440" y2="620" />
+              <line x1="220" y1="460" x2="520" y2="570" />
+            </g>
+
+            <!-- Volumetric Light Beam Streaming from Open Doorway -->
+            <polygon points="458,168 528,198 380,440 210,390" fill="url(#door-volumetric-beam)" />
+
+            <!-- 3D FLOATING ARCHITECTURAL STAIRS (Ascending Bottom-Left to Top-Right) -->
+
+            <!-- STEP 1: Base Platform with Graduation Cap -->
+            <g class="step-group step-1">
+              <!-- Slab Drop Shadow -->
+              <polygon points="80,565 150,600 220,565 150,530" fill="#0a1128" opacity="0.07" filter="url(#shadow-slab)" />
+              <!-- Front-Left Face -->
+              <polygon points="80,540 150,575 150,591 80,556" fill="url(#step-fl-grad)" />
+              <!-- Front-Right Face -->
+              <polygon points="150,575 220,540 220,556 150,591" fill="url(#step-fr-grad)" />
+              <!-- Top Face -->
+              <polygon points="150,505 220,540 150,575 80,540" fill="url(#step-top-base)" stroke="#ffffff" stroke-width="0.8" />
+              
+              <!-- Minimalist 3D Graduation Cap on Step 1 -->
+              <g class="grad-cap-assembly">
+                <!-- Cap Soft Shadow -->
+                <ellipse cx="150" cy="542" rx="28" ry="12" fill="#0a1128" opacity="0.18" />
+                <!-- Skullcap Under-Crown -->
+                <path d="M 134 528 Q 150 519 166 528 L 166 536 Q 150 545 134 536 Z" fill="#050814" />
+                <!-- Mortarboard Diamond Top -->
+                <polygon points="150,508 180,523 150,538 120,523" fill="url(#cap-top-grad)" stroke="rgba(255,255,255,0.25)" stroke-width="0.75" />
+                <!-- Highlight Reflection on Cap Top -->
+                <polygon points="150,510 176,523 150,526 126,523" fill="rgba(100, 131, 232, 0.15)" />
+                <!-- Central Cap Button -->
+                <circle cx="150" cy="523" r="3.5" fill="#6483e8" />
+                <!-- Elegant Draping Tassel -->
+                <path d="M 150 523 Q 138 521 126 528 Q 120 534 118 546" stroke="#6483e8" stroke-width="2.5" stroke-linecap="round" fill="none" />
+                <!-- Tassel Ring & Fringe -->
+                <circle cx="118" cy="546" r="2" fill="#818cf8" />
+                <polygon points="115,547 121,547 120,556 116,556" fill="#6483e8" />
+              </g>
+            </g>
+
+            <!-- STEP 2: Ascending Step -->
+            <g class="step-group step-2">
+              <polygon points="147,502 205,531 263,502 205,473" fill="#0a1128" opacity="0.06" filter="url(#shadow-slab)" />
+              <polygon points="147,480 205,509 205,523 147,494" fill="url(#step-fl-grad)" />
+              <polygon points="205,509 263,480 263,494 205,523" fill="url(#step-fr-grad)" />
+              <polygon points="205,451 263,480 205,509 147,480" fill="url(#step-top-base)" stroke="#ffffff" stroke-width="0.8" />
+            </g>
+
+            <!-- STEP 3: Approaching the Experience Barrier -->
+            <g class="step-group step-3">
+              <polygon points="202,442 260,471 318,442 260,413" fill="#0a1128" opacity="0.06" filter="url(#shadow-slab)" />
+              <polygon points="202,420 260,449 260,463 202,434" fill="url(#step-fl-grad)" />
+              <polygon points="260,449 318,420 318,434 260,463" fill="url(#step-fr-grad)" />
+              <polygon points="260,391 318,420 260,449 202,420" fill="url(#step-top-mid)" stroke="#ffffff" stroke-width="0.8" />
+            </g>
+
+            <!-- THE TRANSPARENT GLASS EXPERIENCE BARRIER (Intersecting Staircase) -->
+            <g class="glass-barrier-assembly">
+              <!-- Main Frosted Glass Base Pane (Intact Left Section) -->
+              <polygon points="225,175 285,205 285,475 225,445" fill="url(#glass-pane-grad)" stroke="rgba(255, 255, 255, 0.7)" stroke-width="1.2" />
+              
+              <!-- Glass Thickness Edge Left -->
+              <polygon points="222,174 225,175 225,445 222,444" fill="rgba(255, 255, 255, 0.8)" />
+
+              <!-- Upper Intact Pane (Top Right Corner) -->
+              <polygon points="285,205 375,250 375,310 325,285" fill="url(#glass-pane-grad)" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1" />
+
+              <!-- Lower Right Intact Fragment -->
+              <polygon points="340,385 375,402 375,515 340,498" fill="url(#glass-pane-grad)" stroke="rgba(255, 255, 255, 0.6)" stroke-width="1" />
+
+              <!-- Fracture Crack Lines Radiating Around Breach -->
+              <g class="fracture-crack-lines" stroke="rgba(255, 255, 255, 0.85)" stroke-width="1.5" stroke-linecap="round">
+                <path d="M 285 300 L 298 312 L 292 328 L 310 338" />
+                <path d="M 285 345 L 302 352 L 315 348 L 332 360" />
+                <path d="M 298 312 L 318 305 L 335 315" />
+                <path d="M 315 348 L 328 375 L 340 385" />
+                <path d="M 335 315 L 350 310 L 370 325" stroke="rgba(147, 197, 253, 0.8)" />
+                <path d="M 270 260 L 285 285 L 298 312" stroke="rgba(255, 255, 255, 0.7)" stroke-dasharray="3,3" />
+                <path d="M 328 375 L 355 390 L 375 402" stroke="rgba(255, 255, 255, 0.7)" stroke-dasharray="3,3" />
+              </g>
+
+              <!-- Dissolving & Floating Glass Shards (Breaking Apart in 3D) -->
+              <g class="floating-glass-shards">
+                <polygon points="295,290 315,282 308,305 292,300" fill="url(#glass-shard-grad)" stroke="#ffffff" stroke-width="1" opacity="0.85" />
+                <polygon points="320,312 342,306 335,328 316,322" fill="url(#glass-shard-grad)" stroke="#ffffff" stroke-width="1.2" opacity="0.9" />
+                <polygon points="305,340 325,332 320,355 300,350" fill="url(#glass-shard-grad)" stroke="rgba(255, 255, 255, 0.85)" stroke-width="1" opacity="0.75" />
+                <polygon points="340,335 352,328 348,345 336,342" fill="url(#glass-shard-grad)" stroke="#ffffff" stroke-width="0.8" opacity="0.8" />
+                <polygon points="328,278 338,272 334,286" fill="#ffffff" opacity="0.9" />
+                <polygon points="350,295 360,290 356,302" fill="rgba(147, 197, 253, 0.9)" opacity="0.8" />
+              </g>
+
+              <!-- Glowing Dissolving Energy Particles -->
+              <g class="dissolving-particles">
+                <circle cx="318" cy="298" r="2.5" fill="#ffffff" opacity="0.9" />
+                <circle cx="334" cy="285" r="2" fill="#93c5fd" opacity="0.85" />
+                <circle cx="348" cy="270" r="1.5" fill="#fef08a" opacity="0.9" />
+                <circle cx="308" cy="330" r="2" fill="#ffffff" opacity="0.75" />
+                <circle cx="326" cy="348" r="1.5" fill="#93c5fd" opacity="0.7" />
+                <circle cx="362" cy="280" r="2" fill="#ffffff" opacity="0.8" />
+              </g>
+
+              <!-- FRACTURED & DISSOLVING TEXT: "2 YEARS EXPERIENCE REQUIRED" -->
+              <!-- Oriented along the glass pane angle (isometric skew) -->
+              <g class="barrier-text-layer" transform="matrix(0.894, 0.447, 0, 1, 234, 250)">
+                <!-- Left segment: "2 YEARS" (Solid on barrier) -->
+                <text x="5" y="0" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="rgba(255, 255, 255, 0.9)" letter-spacing="1.2">
+                  2 YEARS
+                </text>
+
+                <!-- Center segment: "EXPERIENCE" (Shattered / Displaced across fissure) -->
+                <text x="62" y="-1" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="rgba(255, 255, 255, 0.75)" letter-spacing="1.2">
+                  EXP
+                </text>
+                <text x="88" y="2" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="rgba(147, 197, 253, 0.65)" letter-spacing="1.2" opacity="0.75">
+                  ERI
+                </text>
+                <text x="110" y="-3" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="rgba(255, 255, 255, 0.4)" letter-spacing="1.5" opacity="0.5">
+                  ENCE
+                </text>
+
+                <!-- Right segment: "REQUIRED" (Ghosting & fracturing into dissolved particles) -->
+                <text x="146" y="0" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="rgba(255, 255, 255, 0.5)" letter-spacing="1.2" opacity="0.6">
+                  REQUIRED
+                </text>
+
+                <!-- Hairline crack crossing through text -->
+                <line x1="58" y1="-8" x2="115" y2="6" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
+                <line x1="85" y1="-10" x2="142" y2="4" stroke="rgba(147, 197, 253, 0.8)" stroke-width="1" stroke-dasharray="2,2" />
+              </g>
+            </g>
+
+            <!-- STEP 4: The Breach Step (Ascending directly through the broken barrier) -->
+            <g class="step-group step-4">
+              <polygon points="257,382 315,411 373,382 315,353" fill="#0a1128" opacity="0.06" filter="url(#shadow-slab)" />
+              <polygon points="257,360 315,389 315,403 257,374" fill="url(#step-fl-grad)" />
+              <polygon points="315,389 373,360 373,374 315,403" fill="url(#step-fr-grad)" />
+              <polygon points="315,331 373,360 315,389 257,360" fill="url(#step-top-mid)" stroke="#ffffff" stroke-width="0.8" />
+            </g>
+
+            <!-- STEP 5: Ascending in Light (Beyond the Barrier) -->
+            <g class="step-group step-5">
+              <polygon points="312,322 370,351 428,322 370,293" fill="#0a1128" opacity="0.06" filter="url(#shadow-slab)" />
+              <polygon points="312,300 370,329 370,343 312,314" fill="url(#step-fl-grad)" />
+              <polygon points="370,329 428,300 428,314 370,343" fill="url(#step-fr-grad)" />
+              <polygon points="370,271 428,300 370,329 312,300" fill="url(#step-top-upper)" stroke="#ffffff" stroke-width="0.9" />
+            </g>
+
+            <!-- STEP 6: Upper Elevated Step -->
+            <g class="step-group step-6">
+              <polygon points="367,262 425,291 483,262 425,233" fill="#0a1128" opacity="0.06" filter="url(#shadow-slab)" />
+              <polygon points="367,240 425,269 425,283 367,254" fill="url(#step-fl-grad)" />
+              <polygon points="425,269 483,240 483,254 425,283" fill="url(#step-fr-grad)" />
+              <polygon points="425,211 483,240 425,269 367,240" fill="url(#step-top-upper)" stroke="#ffffff" stroke-width="0.9" />
+            </g>
+
+            <!-- STEP 7: The Doorway Threshold Landing -->
+            <g class="step-group step-7">
+              <polygon points="417,206 485,240 553,206 485,172" fill="#0a1128" opacity="0.07" filter="url(#shadow-slab)" />
+              <polygon points="417,180 485,214 485,230 417,196" fill="url(#step-fl-grad)" />
+              <polygon points="485,214 553,180 553,196 485,230" fill="url(#step-fr-grad)" />
+              <polygon points="485,146 553,180 485,214 417,180" fill="url(#step-top-upper)" stroke="#ffffff" stroke-width="1" />
+            </g>
+
+            <!-- THE ILLUMINATED OPEN DOORWAY (The First Opportunity) -->
+            <g class="doorway-assembly" filter="url(#glow-door)">
+              <!-- Doorway Frame: Deep Architectural Navy -->
+              <polygon points="446,42 458,48 458,175 446,169" fill="#0a1128" stroke="rgba(100, 131, 232, 0.4)" stroke-width="0.8" />
+              <polygon points="446,42 530,84 530,98 446,56" fill="#070c1e" stroke="rgba(100, 131, 232, 0.4)" stroke-width="0.8" />
+              <polygon points="522,94 534,100 534,220 522,214" fill="#141f3d" stroke="rgba(100, 131, 232, 0.4)" stroke-width="0.8" />
+              <polygon points="458,48 522,80 522,208 458,176" fill="#070c1e" />
+
+              <!-- Radiant Portal Interior -->
+              <polygon points="458,52 522,84 522,204 458,172" fill="url(#portal-inner-glow)" />
+
+              <!-- Open Door Leaf (Swung Inward into Portal) -->
+              <polygon points="522,84 496,71 496,191 522,204" fill="#0a1128" stroke="#6483e8" stroke-width="1.2" />
+              <polygon points="494,70 496,71 496,191 494,190" fill="rgba(255, 255, 255, 0.7)" />
+              <!-- Metallic Door Handle -->
+              <line x1="504" y1="135" x2="504" y2="150" stroke="#fef08a" stroke-width="2" stroke-linecap="round" />
+
+              <!-- Portal Horizon Burst Star -->
+              <circle cx="490" cy="128" r="8" fill="#ffffff" filter="url(#glow-door)" opacity="0.95" />
+              <line x1="472" y1="128" x2="508" y2="128" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+              <line x1="490" y1="110" x2="490" y2="146" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+            </g>
+          </svg>
+
+          <!-- 4 Elegant Floating Storytelling Labels -->
+          <div class="career-story-pill pill-fresh-grad">
+            <span class="story-dot dot-grad"></span>
+            <span class="story-text">Fresh Graduate</span>
           </div>
 
-          <div class="hero-floating-pill pill-bottom-right">
-            <span class="pill-icon pill-icon-green">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-              </svg>
-            </span>
-            <span>100% Free Portal</span>
+          <div class="career-story-pill pill-skills">
+            <span class="story-dot dot-skills"></span>
+            <span class="story-text">Skills</span>
           </div>
 
-          <div class="hero-logo-frame">
-            <img src="./gradohire-logo.png" alt="GradoHire Brand Identity" class="hero-logo-img" width="200" height="200" loading="eager" />
+          <div class="career-story-pill pill-potential">
+            <span class="story-dot dot-potential"></span>
+            <span class="story-text">Potential</span>
           </div>
 
-          <div class="hero-card-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            </svg>
-            <span>Fresher-First Portal</span>
+          <div class="career-story-pill pill-first-opp">
+            <span class="story-dot dot-opp"></span>
+            <span class="story-text">First Opportunity</span>
           </div>
 
-          <p class="hero-card-meta">
-            Curated opportunities and graduate drives that value skills and potential.
-          </p>
         </div>
 
       </div>

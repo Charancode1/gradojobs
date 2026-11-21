@@ -607,116 +607,182 @@ h1, h2, h3, h4, h5, h6 {
   flex-shrink: 0;
 }
 
-/* Hero Visual Showcase Card */
-.hero-visual-card {
+/* ==========================================================================
+   Hero Visual Composition: Breaking the Experience Barrier (3D Career Staircase)
+   ========================================================================== */
+.hero-barrier-stage {
   position: relative;
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: 36px 32px;
-  box-shadow: var(--shadow-xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.hero-visual-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl), var(--shadow-glow-blue);
-}
-
-.hero-logo-frame {
   width: 100%;
-  max-width: 250px;
-  aspect-ratio: 1 / 1;
+  max-width: 540px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-blue-50);
-  border: 1px solid var(--color-blue-100);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-bottom: 22px;
 }
 
-.hero-logo-img {
+/* Background Atmospheric Radial Glow */
+.hero-barrier-glow {
+  position: absolute;
+  top: 36%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: 110%;
+  background: radial-gradient(circle, rgba(100, 131, 232, 0.22) 0%, rgba(79, 117, 226, 0.08) 45%, transparent 72%);
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3D Isometric SVG Container */
+.hero-barrier-svg {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform var(--transition-slow);
+  height: auto;
+  display: block;
+  border-radius: var(--radius-xl);
+  filter: drop-shadow(0 20px 35px rgba(10, 17, 40, 0.08));
 }
 
-.hero-visual-card:hover .hero-logo-img {
-  transform: scale(1.04);
+/* Refined Micro-Animations */
+@keyframes door-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(254, 240, 138, 0.65));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(129, 140, 248, 0.9));
+  }
 }
 
-.hero-card-badge {
+.doorway-assembly {
+  animation: door-pulse 4s ease-in-out infinite;
+}
+
+@keyframes shard-drift {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(1deg);
+  }
+}
+
+.floating-glass-shards {
+  animation: shard-drift 5s ease-in-out infinite;
+  transform-origin: 330px 320px;
+}
+
+@keyframes particle-twinkle {
+  0%, 100% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.dissolving-particles {
+  animation: particle-twinkle 3s ease-in-out infinite;
+}
+
+/* Storytelling Floating Glass Pills */
+.career-story-pill {
+  position: absolute;
+  z-index: 3;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(100, 131, 232, 0.24);
   border-radius: var(--radius-full);
-  background: rgba(79, 117, 226, 0.1);
-  color: var(--color-blue-700);
+  box-shadow: 0 12px 28px -6px rgba(10, 17, 40, 0.12),
+              0 2px 8px rgba(100, 131, 232, 0.06);
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.hero-card-meta {
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  max-width: 280px;
-}
-
-/* Floating micro cards on hero */
-.hero-floating-pill {
-  position: absolute;
-  background: #ffffff;
-  padding: 10px 18px;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.8125rem;
-  font-weight: 600;
   color: var(--color-navy-950);
   pointer-events: none;
+  white-space: nowrap;
+  transition: transform var(--transition-normal);
 }
 
-.pill-top-left {
-  top: -14px;
-  left: -20px;
-}
-
-.pill-bottom-right {
-  bottom: -16px;
-  right: -16px;
-}
-
-.pill-icon {
-  width: 22px;
-  height: 22px;
+.story-dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
 }
 
-.pill-icon-blue {
-  background: var(--color-blue-100);
-  color: var(--color-blue-600);
+.dot-grad {
+  background-color: var(--color-navy-900);
+  box-shadow: 0 0 0 2px rgba(10, 17, 40, 0.18);
 }
 
-.pill-icon-green {
-  background: #dcfce7;
-  color: #16a34a;
+.dot-skills {
+  background-color: #6483e8;
+  box-shadow: 0 0 0 2px rgba(100, 131, 232, 0.28);
+}
+
+.dot-potential {
+  background-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.32);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+.dot-opp {
+  background-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes float-gentle-reverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Individual Pill Positions Along Career Path */
+.pill-fresh-grad {
+  bottom: 8%;
+  left: -2%;
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.pill-skills {
+  bottom: 35%;
+  left: 2%;
+  animation: float-gentle-reverse 6.5s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+.pill-potential {
+  top: 38%;
+  right: 2%;
+  animation: float-gentle 5.8s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.pill-first-opp {
+  top: 4%;
+  right: -2%;
+  animation: float-gentle-reverse 6.2s ease-in-out infinite;
+  animation-delay: 1.8s;
 }
 
 /* --------------------------------------------------------------------------
@@ -1386,8 +1452,8 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
   }
 
-  .hero-visual-card {
-    max-width: 440px;
+  .hero-barrier-stage {
+    max-width: 480px;
     margin: 0 auto;
   }
 
@@ -1439,8 +1505,33 @@ h1, h2, h3, h4, h5, h6 {
     gap: 32px;
   }
 
-  .hero-floating-pill {
-    display: none;
+  .hero-barrier-stage {
+    max-width: 440px;
+  }
+
+  .career-story-pill {
+    padding: 6px 13px;
+    font-size: 0.775rem;
+  }
+
+  .pill-fresh-grad {
+    bottom: 6%;
+    left: 4px;
+  }
+
+  .pill-skills {
+    bottom: 34%;
+    left: 6px;
+  }
+
+  .pill-potential {
+    top: 37%;
+    right: 6px;
+  }
+
+  .pill-first-opp {
+    top: 3%;
+    right: 4px;
   }
 }
 
@@ -1456,5 +1547,40 @@ h1, h2, h3, h4, h5, h6 {
 
   .btn {
     padding: 12px 20px;
+  }
+
+  .hero-barrier-stage {
+    max-width: 320px;
+  }
+
+  .career-story-pill {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    gap: 6px;
+  }
+
+  .story-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .pill-fresh-grad {
+    bottom: 4%;
+    left: 0;
+  }
+
+  .pill-skills {
+    bottom: 32%;
+    left: 0;
+  }
+
+  .pill-potential {
+    top: 36%;
+    right: 0;
+  }
+
+  .pill-first-opp {
+    top: 2%;
+    right: 0;
   }
 }
