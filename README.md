@@ -83,6 +83,7 @@ All CTA buttons and community badges automatically sync to this configuration. O
 ```
 gradohire/
 ├── Gradohire G logo.png        # Original 4000x4000 brand logo asset
+├── gradohire browserfavicon.png# Official browser favicon source image
 ├── gradohire-logo.png          # High-resolution transparent logo mark
 ├── favicon.ico                 # Multi-resolution favicon
 ├── favicon-16x16.png           # 16x16 browser favicon
