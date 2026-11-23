@@ -1268,6 +1268,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Showcase Footer */
@@ -1992,6 +1994,18 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------------------------------------------------------------------
    14. Responsive Breakpoints
    -------------------------------------------------------------------------- */
+/* Prevent grid items from causing blowout across all viewports */
+.hero-grid > *,
+.partner-benefits-grid > *,
+.partner-cta-grid > *,
+.why-grid > *,
+.about-grid > *,
+.steps-grid > *,
+.social-cards-grid > *,
+.footer-top-grid > * {
+  min-width: 0;
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2030,7 +2044,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .partner-visual-stage {
-    justify-content: flex-start;
+    justify-content: center;
+    perspective: none;
+    overflow: hidden;
   }
 
   .about-grid {
@@ -2041,84 +2057,103 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 70px;
+    --header-height: 68px;
   }
 
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Header mobile sizing & spacing */
   .desktop-nav {
     display: none;
   }
 
+  .nav-container {
+    gap: 8px;
+  }
+
+  .brand-wrapper {
+    gap: 8px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .brand-logo-img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .brand-text-logo {
+    font-size: 1.25rem;
+    white-space: nowrap;
+  }
+
+  .header-cta-group {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .header-cta-group .btn {
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
   .mobile-toggle-btn {
     display: flex;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
   }
 
   .mobile-menu-drawer {
     display: flex;
+    top: var(--header-height);
   }
 
-  .partner-benefits-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 36px;
-    margin-bottom: 36px;
+  .mobile-menu-overlay {
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
   }
 
-  .partner-cta-card {
-    padding: 32px 22px;
+  /* Hero Section */
+  .hero-section {
+    padding-top: 36px;
+    padding-bottom: 56px;
   }
 
-  .btn-linkedin-partner {
-    width: 100%;
-    justify-content: center;
+  .hero-headline {
+    font-size: clamp(1.75rem, 6vw, 2.35rem);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
-  .partner-3d-scene {
-    padding: 10px 0 6px 0;
+  .hero-supporting-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 26px;
   }
 
-  .card-hiring-badge {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin-bottom: 12px;
-    animation: none;
-  }
-
-  .card-product-showcase {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: 12px;
-    animation: none;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .social-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .footer-top-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .btn-lg {
+    padding: 13px 24px;
+    font-size: 0.95rem;
   }
 
   .hero-barrier-stage {
-    max-width: 440px;
+    max-width: 400px;
+    width: 100%;
   }
 
   .career-story-pill {
-    padding: 6px 13px;
-    font-size: 0.775rem;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    max-width: calc(100% - 12px);
   }
 
   .pill-fresh-grad {
@@ -2140,45 +2175,246 @@ h1, h2, h3, h4, h5, h6 {
     top: 3%;
     right: 4px;
   }
-}
 
-@media (max-width: 480px) {
-  .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
+  /* Hiring Partner Section */
+  .section-padding {
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 
-  .hero-cta-group .btn {
-    width: 100%;
-  }
-
-  .btn {
-    padding: 12px 20px;
+  .partner-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 36px;
+    margin-bottom: 36px;
   }
 
   .partner-benefit-card {
-    padding: 26px 20px;
+    padding: 28px 22px;
+  }
+
+  .partner-cta-card {
+    padding: 30px 20px;
+    border-radius: var(--radius-xl);
+  }
+
+  .partner-cta-content {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .partner-cta-heading {
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+  }
+
+  .partner-cta-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+
+  .partner-cta-actions {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .btn-linkedin-partner {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    padding: 12px 18px;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    gap: 8px;
   }
 
   .partner-trust-pills {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .trust-mini-pill {
+    font-size: 0.8125rem;
+    line-height: 1.35;
+  }
+
+  .partner-visual-stage {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    perspective: none;
+    overflow: hidden;
+  }
+
+  .partner-3d-scene {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px 0;
+    transform-style: flat;
   }
 
   .flow-bridge-strip {
+    max-width: 100%;
+    box-sizing: border-box;
     flex-wrap: wrap;
     gap: 6px;
     padding: 6px 10px;
+    justify-content: center;
+  }
+
+  .card-central-showcase {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 18px 16px;
+  }
+
+  .card-hiring-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 12px;
+    animation: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-product-showcase {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 12px;
+    animation: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .product-showcase-heading {
+    white-space: normal;
+    line-height: 1.25;
+    font-size: 0.8125rem;
+  }
+
+  /* Other Sections */
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .social-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Header */
+  .brand-wrapper {
+    gap: 6px;
+  }
+
+  .brand-logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-text-logo {
+    font-size: 1.2rem;
+  }
+
+  .header-cta-group {
+    gap: 6px;
+  }
+
+  .header-cta-group .btn {
+    padding: 7px 11px;
+    font-size: 0.775rem;
+  }
+
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  /* Hero Section */
+  .hero-headline br {
+    display: none;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.6rem, 7vw, 1.95rem);
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .hero-supporting-text {
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 13px 16px;
+    font-size: 0.9375rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-supporting-line {
+    font-size: 0.8125rem;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hero-barrier-stage {
-    max-width: 320px;
+    max-width: min(320px, 100%);
   }
 
   .career-story-pill {
-    padding: 5px 10px;
-    font-size: 0.7rem;
-    gap: 6px;
+    padding: 4px 8px;
+    font-size: 0.6875rem;
+    gap: 5px;
+    max-width: calc(100% - 10px);
   }
 
   .story-dot {
@@ -2188,21 +2424,294 @@ h1, h2, h3, h4, h5, h6 {
 
   .pill-fresh-grad {
     bottom: 4%;
-    left: 0;
+    left: 2px;
   }
 
   .pill-skills {
     bottom: 32%;
-    left: 0;
+    left: 4px;
   }
 
   .pill-potential {
     top: 36%;
-    right: 0;
+    right: 4px;
   }
 
   .pill-first-opp {
     top: 2%;
-    right: 0;
+    right: 2px;
+  }
+
+  /* Hiring Partner Section */
+  .partner-benefit-card {
+    padding: 24px 18px;
+  }
+
+  .benefit-title {
+    font-size: 1.15rem;
+  }
+
+  .benefit-tag-pill {
+    font-size: 0.725rem;
+    padding: 4px 10px;
+    white-space: normal;
+    line-height: 1.3;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  .partner-cta-card {
+    padding: 24px 16px;
+  }
+
+  .partner-badge-pill {
+    font-size: 0.725rem;
+    padding: 4px 10px;
+  }
+
+  .partner-cta-heading {
+    font-size: 1.5rem;
+  }
+
+  .partner-cta-subtext {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-linkedin-partner {
+    padding: 11px 12px;
+    font-size: 0.875rem;
+    gap: 7px;
+  }
+
+  .card-central-showcase {
+    padding: 16px 12px;
+  }
+
+  .showcase-brand-row {
+    gap: 10px;
+  }
+
+  .showcase-brand-symbol {
+    width: 36px;
+    height: 36px;
+  }
+
+  .showcase-brand-name {
+    font-size: 0.9375rem;
+  }
+
+  .product-viewport-art {
+    padding: 12px 10px;
+    gap: 10px;
+  }
+
+  .product-feature-tag {
+    font-size: 0.6875rem;
+    padding: 4px 8px;
+  }
+
+  .showcase-reach-info {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .card-hiring-badge {
+    padding: 10px 12px;
+  }
+
+  .hiring-title {
+    font-size: 0.875rem;
+  }
+
+  .card-product-showcase {
+    padding: 9px 12px;
+    gap: 10px;
+  }
+
+  .product-showcase-heading {
+    font-size: 0.775rem;
+  }
+
+  /* Other Sections */
+  .section-padding {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .why-card {
+    padding: 24px 18px;
+  }
+
+  .about-visual-wrapper {
+    padding: 24px 16px;
+  }
+
+  .about-logo-img {
+    max-width: 170px;
+  }
+
+  .about-feature-item {
+    gap: 12px;
+  }
+
+  .step-card {
+    padding: 24px 18px;
+  }
+
+  .social-card {
+    padding: 24px 18px;
+  }
+
+  .social-card-title {
+    font-size: 1.2rem;
+  }
+
+  .btn-social-whatsapp,
+  .btn-social-linkedin {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: center;
+    padding: 11px 14px;
+    font-size: 0.875rem;
+  }
+
+  .cta-banner {
+    padding: 32px 16px;
+  }
+
+  .cta-headline {
+    font-size: clamp(1.45rem, 6vw, 1.85rem);
+  }
+
+  .cta-supporting-text {
+    font-size: 0.925rem;
+    margin-bottom: 22px;
+  }
+
+  .cta-action-wrap {
+    width: 100%;
+  }
+
+  .cta-action-wrap .btn {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    padding: 13px 16px;
+    font-size: 0.9375rem;
+  }
+
+  .cta-trust-note {
+    font-size: 0.8rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Header ultra-compact */
+  .brand-wrapper {
+    gap: 5px;
+  }
+
+  .brand-logo-img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .brand-text-logo {
+    font-size: 1.1rem;
+  }
+
+  .header-cta-group {
+    gap: 5px;
+  }
+
+  .header-cta-group .btn {
+    padding: 6px 9px;
+    font-size: 0.725rem;
+  }
+
+  .mobile-toggle-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    gap: 4px;
+  }
+
+  .mobile-toggle-bar {
+    width: 16px;
+  }
+
+  /* Hero */
+  .hero-headline {
+    font-size: 1.45rem;
+  }
+
+  .hero-supporting-text {
+    font-size: 0.875rem;
+  }
+
+  .hero-cta-group .btn {
+    padding: 11px 12px;
+    font-size: 0.875rem;
+  }
+
+  .hero-barrier-stage {
+    max-width: 280px;
+  }
+
+  /* Hiring Partner Section */
+  .partner-cta-card {
+    padding: 18px 10px;
+    border-radius: var(--radius-lg);
+  }
+
+  .partner-cta-heading {
+    font-size: 1.35rem;
+  }
+
+  .btn-linkedin-partner {
+    padding: 10px 8px;
+    font-size: 0.8125rem;
+    gap: 6px;
+  }
+
+  .flow-node {
+    font-size: 0.65rem;
+  }
+
+  .flow-arrow {
+    font-size: 0.7rem;
+  }
+
+  .card-central-showcase {
+    padding: 14px 10px;
+  }
+
+  .product-feature-tag {
+    font-size: 0.65rem;
+    padding: 3px 6px;
+  }
+
+  /* Other Cards */
+  .why-card,
+  .partner-benefit-card,
+  .step-card,
+  .social-card {
+    padding: 18px 12px;
+  }
+
+  .cta-banner {
+    padding: 26px 12px;
   }
 }
