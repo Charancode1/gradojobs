@@ -2177,34 +2177,71 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-barrier-stage {
-    max-width: 400px;
+    position: relative;
     width: 100%;
+    max-width: min(390px, 100%);
+    margin: 0 auto;
+    padding: 18px 14px 16px;
+    background: linear-gradient(135deg, rgba(244, 247, 254, 0.95) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(235, 242, 254, 0.95) 100%);
+    border: 1px solid rgba(100, 131, 232, 0.2);
+    border-radius: var(--radius-2xl, 24px);
+    box-shadow: 0 14px 34px -8px rgba(79, 117, 226, 0.12),
+                0 2px 10px rgba(10, 17, 40, 0.04),
+                0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-barrier-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(100, 131, 232, 0.18) 0%, rgba(79, 117, 226, 0.06) 50%, transparent 72%);
+    filter: blur(28px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-barrier-svg {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 22px rgba(10, 17, 40, 0.06));
   }
 
   .career-story-pill {
     padding: 6px 12px;
     font-size: 0.75rem;
-    max-width: calc(100% - 12px);
+    max-width: calc(100% - 16px);
   }
 
   .pill-fresh-grad {
-    bottom: 6%;
-    left: 4px;
+    bottom: 5%;
+    left: 8px;
   }
 
   .pill-skills {
-    bottom: 34%;
-    left: 6px;
+    bottom: 33%;
+    left: 10px;
   }
 
   .pill-potential {
-    top: 37%;
-    right: 6px;
+    top: 36%;
+    right: 10px;
   }
 
   .pill-first-opp {
     top: 3%;
-    right: 4px;
+    right: 8px;
   }
 
   /* Hiring Partner Section */
@@ -2232,17 +2269,33 @@ h1, h2, h3, h4, h5, h6 {
   .partner-cta-content {
     min-width: 0;
     width: 100%;
+    text-align: center;
   }
 
   .partner-cta-heading {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 560px;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
     font-size: clamp(1.5rem, 5.5vw, 2rem);
-    line-height: 1.2;
+    line-height: 1.22;
     overflow-wrap: break-word;
   }
 
   .partner-cta-subtext {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 0.95rem;
     margin-bottom: 22px;
+    max-width: 500px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-sizing: border-box;
   }
 
   .partner-cta-actions {
@@ -2526,14 +2579,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-barrier-stage {
-    max-width: min(320px, 100%);
+    max-width: min(350px, 100%);
+    padding: 14px 10px;
+    border-radius: var(--radius-xl, 20px);
   }
 
   .career-story-pill {
-    padding: 4px 8px;
+    padding: 5px 9px;
     font-size: 0.6875rem;
     gap: 5px;
-    max-width: calc(100% - 10px);
+    max-width: calc(100% - 14px);
   }
 
   .story-dot {
@@ -2543,22 +2598,22 @@ h1, h2, h3, h4, h5, h6 {
 
   .pill-fresh-grad {
     bottom: 4%;
-    left: 2px;
+    left: 6px;
   }
 
   .pill-skills {
     bottom: 32%;
-    left: 4px;
+    left: 8px;
   }
 
   .pill-potential {
-    top: 36%;
-    right: 4px;
+    top: 35%;
+    right: 8px;
   }
 
   .pill-first-opp {
     top: 2%;
-    right: 2px;
+    right: 6px;
   }
 
   /* Hiring Partner Section */
@@ -2590,10 +2645,22 @@ h1, h2, h3, h4, h5, h6 {
 
   .partner-cta-heading {
     font-size: 1.5rem;
+    line-height: 1.25;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .partner-cta-subtext {
     font-size: 0.9rem;
+    line-height: 1.55;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 6px;
+    padding-right: 6px;
     margin-bottom: 20px;
   }
 
@@ -2832,7 +2899,36 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .hero-barrier-stage {
-    max-width: 280px;
+    max-width: 100%;
+    padding: 10px 6px;
+    border-radius: var(--radius-lg, 16px);
+  }
+
+  .career-story-pill {
+    padding: 4px 7px;
+    font-size: 0.625rem;
+    gap: 4px;
+    max-width: calc(100% - 10px);
+  }
+
+  .pill-fresh-grad {
+    bottom: 3%;
+    left: 4px;
+  }
+
+  .pill-skills {
+    bottom: 30%;
+    left: 5px;
+  }
+
+  .pill-potential {
+    top: 34%;
+    right: 5px;
+  }
+
+  .pill-first-opp {
+    top: 2%;
+    right: 4px;
   }
 
   /* Hiring Partner Section */
@@ -2843,6 +2939,21 @@ h1, h2, h3, h4, h5, h6 {
 
   .partner-cta-heading {
     font-size: 1.35rem;
+    line-height: 1.25;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .partner-cta-subtext {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 
   .btn-linkedin-partner {
