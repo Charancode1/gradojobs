@@ -1918,6 +1918,10 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
+.cta-trust-note svg {
+  flex-shrink: 0;
+}
+
 /* --------------------------------------------------------------------------
    13. Footer
    -------------------------------------------------------------------------- */
@@ -2502,6 +2506,32 @@ h1, h2, h3, h4, h5, h6 {
     align-items: flex-start;
     gap: 8px;
   }
+
+  .cta-trust-note {
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: flex-start;
+    align-self: center;
+    justify-content: center;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .cta-trust-note svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cta-trust-note span {
+    min-width: 0;
+    text-align: left;
+    line-height: 1.5;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2839,8 +2869,28 @@ h1, h2, h3, h4, h5, h6 {
 
   .cta-trust-note {
     font-size: 0.8rem;
+    display: inline-flex;
+    align-items: flex-start;
+    align-self: center;
     justify-content: center;
-    text-align: center;
+    gap: 8px;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .cta-trust-note svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cta-trust-note span {
+    min-width: 0;
+    text-align: left;
+    line-height: 1.5;
   }
 }
 
@@ -3039,5 +3089,16 @@ h1, h2, h3, h4, h5, h6 {
 
   .cta-banner {
     padding: 26px 12px;
+  }
+
+  .cta-trust-note {
+    font-size: 0.775rem;
+    gap: 7px;
+  }
+
+  .cta-trust-note svg {
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
   }
 }
